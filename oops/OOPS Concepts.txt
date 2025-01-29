@@ -1,0 +1,204 @@
+# defining class
+#constructor   __init__
+# instance variable
+#class variable 
+#print(type('python'))
+class Course:
+   type1='Programming language'
+   def __init__(self):
+      self.id=101
+      self.cname='python'
+      self.duration=3
+   def show(self):
+      print(self.id,self.cname,self.duration)
+      print(Course.type1)
+ # object1 
+c=Course()
+print(c.id , c.cname, c.duration,c.type1, Course.type1)
+print('Id is {}'.format(c.id))
+print('course is {}'.format(c.cname))
+print('Duration is {}'.format(c.duration))
+print('Type of Course is {}'.format(Course.type1))
+c.show()
+c1=Course()
+c1.show()
+
+
+#Object2
+c1=Course()
+print('Id is {}'.format(c1.id))
+print('course is {}'.format(c1.cname))
+c1.show()
+
+
+#constructor with default values
+
+
+class Employee:
+   'Common base class for all employees'
+   def __init__(self):  #default 
+      self.name = "Bhavana"
+      self.age = 24
+   def disp(self):
+      print(self.name,self.age)
+#object
+e1 = Employee()
+e1.disp()
+e2=Employee()
+e2.disp()
+
+print ("Name: {}".format(e1.name))
+print ("age: {}".format(e1.age))
+
+# parameterized constructor
+
+class Employee:
+   'Common base class for all employees'
+   def __init__(self,name,age):  #default 
+      self.name = name
+      self.age = age
+   def disp(self):
+      print(self.name,self.age)
+#object
+e1 = Employee('Anriv',16)  #runtime
+e1.disp()
+e2=Employee('Anirv11',17) #runtime 
+e2.disp()
+
+print ("Name: {}".format(e1.name))
+print ("age: {}".format(e1.age))
+print("name : {} age {}".format(e2.name,e2.age))
+
+
+# Another example
+
+class Smartphone:
+   # constructor    
+   def __init__(self, device, brand,qty,price):
+      self.device = device
+      self.brand = brand
+      self.qty=qty
+      self.price=price
+   
+   # method of the class
+   def description(self):  #instance method
+     # return 'DEvice:'+self.device+'   BRand is :'+self.brand
+      #return f"{self.device} of {self.brand} supports Android 14"
+      return " {}  and {} {} {}".format(self.brand,self.brand,self.qty,self.price)
+
+# creating object of the class
+phoneObj = Smartphone("Smartphone", "Samsung",10,9999)
+iosObj=Smartphone("compactPhone","OPPO",20,20000)
+simplePhone=Smartphone("android","Motorola",30,88888)
+print(phoneObj.description()) 
+print(iosObj.description())
+print(simplePhone.description())
+
+
+# class 
+#class with constructor (__init__), functions disp, deposit,withdraw,getbalance
+class Account:
+   def __init__(self,acno,name,balance):
+      self.acno=acno
+      self.name=name
+      self.balance=balance
+   def disp(self):
+      print(self.acno,self.name,self.balance)
+      # adding amount with existing balance
+   def deposit(self,amt):
+       self.balance=self.balance+amt
+   def withdraw(self,amt):
+      self.balance=self.balance-amt
+   def getbalance(self):
+      print("Available balance is {}".format(self.balance)) 
+
+a=Account(12345,'pythondev',10000)
+a.disp()
+a.deposit(2000)
+a.getbalance()
+
+a.withdraw(5000)
+a.getbalance()
+a.disp()
+
+a1=Account(34567,'Anirv',50000)
+a1.disp()
+a1.deposit(10000)
+a1.getbalance()
+a1.withdraw(20000)
+a1.getbalance()
+
+
+
+# class attributes and methods
+'''
+class Employee:
+   name = "Bhavesh Aggarwal"
+   age = "30"
+# instance of the class
+emp = Employee()
+# accessing class attributes
+print("Name of the Employee:", emp.name)
+print("Age of the Employee:", emp.age)
+
+
+'''
+
+class Employee:
+   # class attribute    
+   empCount = 0  # common
+   def __init__(self, name, age,count123):
+      self.name = name
+      self.age = age
+      self.count123 = count123+1
+      # modifying class attribute
+      Employee.empCount += 1
+      print ("Name:", self.name, ", Age: ", self.age ,"Count",self.count123) 
+      # accessing class attribute
+      print ("Employee Count:", Employee.empCount)
+
+e1 = Employee("Bhavana", 24,0)
+print()
+e2 = Employee("Rajesh", 26,0)
+print()
+e3= Employee("Anirv",16,0)
+
+# instancemethod  , static method  , class method
+
+
+# static method , class method
+# instance method
+class Product:  #classs attributes
+    id=10
+    address='hyd'
+    def __init__(self,name,qty,price):
+        self.name=name
+        self.qty=qty
+        self.price=price
+        #instance method  spesific to object
+    def ishow(self):
+        print(self.name,self.qty,self.price,self.id,self.address)
+        print(Product.id,Product.address)
+    @classmethod    #common for all objects
+    def show(cls):
+        cls.mname='sony'
+        print(cls.mname)
+        print(cls.address)
+        print(cls.id)
+        Product.id=Product.id+20
+        print(cls.id)
+    @staticmethod
+    def disp():
+        print(Product.mname)
+        print(Product.address)
+        Product.id=Product.id+20
+        print(Product.id)
+        
+p=Product('box',90,999)
+p.ishow() #instance method
+print(p.name,p.price,p.qty)
+p.show()
+p.disp()
+
+
+
