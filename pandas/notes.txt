@@ -1,0 +1,66 @@
+import pandas as pd
+d = {'col1': [1, 2, 3, 4, 7], 'col2': [4, 5, 6, 9, 5], 'col3': [7, 8, 12, 1, 11]}
+df = pd.DataFrame(data=d)
+print(df)
+
+
+import pandas as pd
+
+d = {'col1': [1, 2, 3, 4, 7], 'col2': [4, 5, 6, 9, 5], 'col3': [7, 8, 12, 1, 11]}
+
+df = pd.DataFrame(data=d)
+count_column = df.shape[1]
+
+print("Number of columns:")
+print(count_column)
+
+
+
+The Sports Watch Data Set
+Duration	Average_Pulse	Max_Pulse	Calorie_Burnage	Hours_Work	Hours_Sleep
+30	80	120		240		10	7
+30	85	120		250		10	7
+45	90	130		260		8	7
+45	95	130		270		8	7
+45	100	140		280		0	7
+60	105	140		290		7	8
+60	110	145		300		7	8
+60	115	145		310		8	8
+75	120	150		320		0	8
+75	125	150		330		8	8
+The data set above consists of 6 variables, each with 10 observations:
+
+Duration - How long lasted the training session in minutes?
+Average_Pulse - What was the average pulse of the training session? This is measured by beats per minute
+Max_Pulse - What was the max pulse of the training session?
+Calorie_Burnage - How much calories were burnt on the training session?
+Hours_Work - How many hours did we work at our job before the training session?
+Hours_Sleep - How much did we sleep the night before the training session?
+We use underscore (_) to separate strings because Python cannot read space as separator.
+
+The max() function
+The Python max() function is used to find the highest value in an array.
+
+Average_pulse_max = max(80, 85, 90, 95, 100, 105, 110, 115, 120, 125)
+print (Average_pulse_max)
+
+The min() function
+The Python min() function is used to find the lowest value in an array.
+
+Average_pulse_min = min(80, 85, 90, 95, 100, 105, 110, 115, 120, 125)
+
+print (Average_pulse_min)
+
+
+The mean() function
+The NumPy mean() function is used to find the average value of an array.
+
+
+import numpy as np
+
+Calorie_burnage = [240, 250, 260, 270, 280, 290, 300, 310, 320, 330]
+
+Average_calorie_burnage = np.mean(Calorie_burnage)
+
+print(Average_calorie_burnage)
+
